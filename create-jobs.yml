@@ -2,9 +2,15 @@
   hosts: localhost
   connection: local
   tasks:
+    - name: copy Xml File
+      ansible.builtin.copy:
+        src: test.xml
+        dest: /tmp/test.xml
+
+
     - name: Create a jenkins job
       community.general.jenkins_job:
-        config: "{{ lookup('file', 'test.xml') }}"
+        config: "{{ lookup('file', '/tmp/test.xml') }}"
         name: test-create-from-ansible
         password: admin123
         url: http://172.31.90.183:8080
