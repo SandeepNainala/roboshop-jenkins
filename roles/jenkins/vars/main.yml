@@ -5,3 +5,8 @@ sjobs:
 
 mjobs:
     - { git_repo_url: https://github.com/SandeepNainala/cart.git, job_name: cart }
+    - { git_repo_url: https://github.com/SandeepNainala/catalogue.git, job_name: catalogue }
+    - { git_repo_url: https://github.com/SandeepNainala/user.git, job_name: user }
+    - { git_repo_url: https://github.com/SandeepNainala/shipping.git, job_name: shipping }
+    - { git_repo_url: https://github.com/SandeepNainala/payment.git, job_name: payment }
+    - { git_repo_url: https://github.com/SandeepNainala/dispatch.git, job_name: dispatch }
