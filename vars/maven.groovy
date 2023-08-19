@@ -8,38 +8,37 @@ def call() {
         }
 
         options {
-          ansiColor ('xterm')
+            ansiColor('xterm')
         }
 
 
         stages {
 
-          stage ('Code Compile') {
-            steps {
-              sh 'echo Code Compile'
+            stage('Code Compile') {
+                steps {
+                    sh 'mvn compile'
+                }
             }
-          }
-
-          stage ('Code Quality'){
-            steps {
-              sh 'echo Code Quality'
+            stage('Code Quality') {
+                steps {
+                    sh 'sonar-scanner -Dsonar.projectKey=${component} -Dsonar.host.url=http://172.31.89.203:9000 -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygate.wait=true'
+                }
             }
-          }
-          stage ('Unit Test Cases') {
-            steps {
-              sh 'echo Unit Test Cases'
+            stage('Unit Test Cases') {
+                steps {
+                    sh 'echo Unit Test Cases'
+                }
             }
-          }
-          stage ('CheckMarx SAST Scan') {
-            steps {
-              sh 'echo CheckMarx SAST Scan '
+            stage('CheckMarx SAST Scan') {
+                steps {
+                    sh 'echo CheckMarx SAST Scan '
+                }
             }
-          }
-          stage ('CheckMarx SCA Scan'){
-            steps {
-              sh 'echo CheckMarx SCA Scan'
+            stage('CheckMarx SCA Scan') {
+                steps {
+                    sh 'echo CheckMarx SCA Scan'
+                }
             }
-          }
 
         }
 
