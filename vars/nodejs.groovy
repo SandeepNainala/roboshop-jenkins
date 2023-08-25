@@ -44,7 +44,7 @@ def call() {
              }
              steps {
                 sh 'env'
-                sh 'curl -v -u admin:admin123 --upload-file server.js http://172.31.81.130:8081/cart/server.js'
+                sh 'curl -v -u admin:admin123 --upload-file server.js http://172.31.81.130:8081/repository/cart/server.js'
              }
           }
 
