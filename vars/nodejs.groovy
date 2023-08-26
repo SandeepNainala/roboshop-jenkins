@@ -43,9 +43,9 @@ def call() {
                }
              }
              steps {
-                 sh 'env'
+                 sh 'npm_install'
                  sh 'echo $TAG_NAME >VERSION'
-                 sh 'zip -r ${component}-${TAG_NAME}.zip node_module server.js VERSION'
+                 sh 'zip -r ${component}-${TAG_NAME}.zip node_modules server.js VERSION'
                  sh 'curl -v -u admin:admin123 --upload-file ${component}-${TAG_NAME}.zip server.js http://172.31.81.130:8081/repository/{component}/${component}-${TAG_NAME}.zip'
              }
           }
