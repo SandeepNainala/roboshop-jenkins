@@ -43,7 +43,6 @@ def call() {
                }
              }
              steps {
-                 sh 'npm install'
                  sh 'echo $TAG_NAME >VERSION'
                  sh 'zip -r ${component}-${TAG_NAME}.zip *'
                  // Deleting the below jenkinsfile as it is not needed
